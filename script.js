@@ -301,7 +301,7 @@
       const d = document.createElement('div');
       d.className = 'ph';
       d.style.cssText = `--c1:${col[0]};--c2:${col[1]}`;
-      d.innerHTML = `<span class="f">🌸</span><b>Photo ${n}</b><span>Photo/photo${n}.jpeg</span>`;
+      d.innerHTML = `<span class="f">🌸</span><b>photo ${n}</b><span>Photo/photo${n}.jpeg</span>`;
       return d;
     }
 

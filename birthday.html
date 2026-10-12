@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0612">
+<meta name="description" content="A birthday surprise for Naina Ma'am, from Ankit Sharma.">
+<title>Happy Birthday Naina Ma'am 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="birthday.css">
+</head>
+<body class="locked">
+
+<!-- ============ MYSTERIOUS ENTRY ============ -->
+<div id="intro" aria-live="polite">
+  <div class="half l"></div>
+  <div class="half r"></div>
+  <div class="atmos">
+    <div class="fog f1"></div><div class="fog f2"></div><div class="fog f3"></div>
+    <div class="stars" id="stars"></div>
+    <div class="spot" id="spot"></div>
+  </div>
+  <div class="stage">
+    <div class="whispers">
+      <p class="w1">Shhh… do you hear that?</p>
+      <p class="w2">Something beautiful is hiding in the dark…</p>
+      <p class="w3">A secret meant for one very special person.</p>
+    </div>
+    <button class="orb" id="orb" aria-label="Touch the light to reveal the surprise">
+      <span class="num" id="orbNum">✦</span>
+    </button>
+    <p class="orb-label" id="orbLabel">Touch the light to begin</p>
+  </div>
+  <div class="seam"></div>
+  <div class="flash"></div>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <a href="#home" class="active">Home</a>
+  <a href="#wishes">Wishes</a>
+  <a href="#date">Date</a>
+  <a href="#quotes">Quotes</a>
+  <a href="#gallery">Memories</a>
+</nav>
+
+<main id="site">
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="sparkles" id="sparkles"></div>
+
+    <div class="hero-in">
+      <p class="eyebrow reveal" style="--d:.1s">✦ A very special day ✦</p>
+      <h1 class="greet">
+        <span class="g-script reveal" style="--d:.3s">Happy Birthday</span>
+        <span class="g-name reveal" style="--d:.6s">Naina Ma'am</span>
+      </h1>
+      <p class="from reveal" style="--d:.95s"><span class="line"></span>from <strong>Ankit Sharma</strong><span class="line"></span></p>
+      <p class="date-chip reveal" style="--d:1.15s">📅 <span data-date="full"></span></p>
+      <div class="reveal" style="--d:1.35s">
+        <button class="btn" id="celebrate">Celebrate 🎉</button>
+      </div>
+      <p class="cue reveal" style="--d:1.6s">Scroll gently ↓</p>
+    </div>
+
+    <div class="garden" id="garden" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============ WISHES ============ -->
+  <section id="wishes" class="wishes">
+    <div class="wrap narrow">
+      <p class="eyebrow reveal">With all my heart</p>
+      <h2 class="title reveal">A Little Letter For You</h2>
+      <div class="divider reveal"><span></span>✿<span></span></div>
+
+      <article class="letter reveal">
+        <span class="corner c-tl" id="cTL"></span>
+        <span class="corner c-br" id="cBR"></span>
+        <p class="l-hello">Dear Naina Ma'am,</p>
+        <p>Today is not just another date on the calendar — it is the day the world was gifted someone truly remarkable. Your guidance, patience and warmth have shaped more lives than you will ever know, and I am grateful to be one of them.</p>
+        <p>May this year bring you abundant happiness, glowing health, and every dream you have quietly carried in your heart. May your days be as graceful as you are, and your smile as bright as the light you bring to others.</p>
+        <p>Wishing you a very, very Happy Birthday, Ma'am. 🌸</p>
+        <p class="sign">With warm regards,<br><span>Ankit Sharma</span></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ DATE / CALENDAR ============ -->
+  <section id="date" class="date-sec">
+    <div class="wrap">
+      <p class="eyebrow reveal">Marked in gold</p>
+      <h2 class="title reveal">The Day We Celebrate</h2>
+      <div class="divider reveal"><span></span>✿<span></span></div>
+
+      <div class="date-grid">
+        <div class="datecard reveal from-left">
+          <span class="pill">Today</span>
+          <div class="big" id="bigDay">12</div>
+          <div class="mon" id="bigMonth">October</div>
+          <div class="wkd" id="bigWeek">Monday</div>
+          <div class="yr" id="bigYear">2026</div>
+          <div class="cake">🎂</div>
+        </div>
+
+        <div class="calcard reveal from-right">
+          <div class="cal-head" id="calHead">October 2026</div>
+          <div class="cal-grid" id="calGrid"></div>
+          <p class="cal-cap">🎉 Today — <span data-date="full"></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BLOOMS ============ -->
+  <section id="blooms" class="blooms">
+    <div class="wrap">
+      <p class="eyebrow reveal">My wishes, in bloom</p>
+      <h2 class="title reveal">May Your Year Be Full Of</h2>
+      <div class="divider reveal"><span></span>✿<span></span></div>
+      <div class="bloom-grid" id="bloomGrid"></div>
+    </div>
+  </section>
+
+  <!-- ============ QUOTES ============ -->
+  <section id="quotes" class="quotes">
+    <div class="q-floaters" id="qFloaters" aria-hidden="true"></div>
+    <div class="wrap narrow">
+      <p class="eyebrow light reveal">Words, just for you</p>
+      <h2 class="title light reveal">Little Thoughts</h2>
+      <div class="divider light reveal"><span></span>✿<span></span></div>
+
+      <div class="qbox reveal" id="qbox">
+        <div class="qmark">“</div>
+        <div class="qtrack" id="qtrack"></div>
+        <div class="qctrl">
+          <button class="qbtn" id="qPrev" aria-label="Previous quote">‹</button>
+          <div class="qdots" id="qdots"></div>
+          <button class="qbtn" id="qNext" aria-label="Next quote">›</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <p class="eyebrow reveal">Moments &amp; memories</p>
+      <h2 class="title reveal">Photo Gallery</h2>
+      <div class="divider reveal"><span></span>✿<span></span></div>
+      <p class="sub reveal">Sit back and watch the memories glide by.</p>
+    </div>
+    <div class="reels" id="reels" role="region" aria-label="Scrolling photo gallery"></div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-flowers" id="footFlowers" aria-hidden="true"></div>
+    <p class="f-script">Happy Birthday Naina Ma'am</p>
+    <p class="f-line">With love &amp; respect — <strong>Ankit Sharma</strong></p>
+    <p class="f-date" data-date="full"></p>
+  </footer>
+</main>
+
+<script src="birthday.js"></script>
+</body>
+</html>

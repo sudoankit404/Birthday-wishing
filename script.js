@@ -301,7 +301,7 @@
       const d = document.createElement('div');
       d.className = 'ph';
       d.style.cssText = `--c1:${col[0]};--c2:${col[1]}`;
-      d.innerHTML = `<span class="f">🌸</span><b>Photo ${n}</b><span>photos/photo${n}.jpg</span>`;
+      d.innerHTML = `<span class="f">🌸</span><b>Photo ${n}</b><span>Photo/photo${n}.jpeg</span>`;
       return d;
     }
 
@@ -324,10 +324,10 @@
         };
         img.onerror = () => {
           k++;
-          if (k < exts.length) img.src = `photos/photo${n}.${exts[k]}`;
+          if (k < exts.length) img.src = `Photo/photo${n}.${exts[k]}`;
           else { img.onerror = null; fig.replaceChildren(makePH(n, col)); resolve(); }
         };
-        img.src = `photos/photo${n}.${exts[0]}`;
+        img.src = `Photo/photo${n}.${exts[0]}`;
         fig.appendChild(img);
       });
       return { fig, done };
